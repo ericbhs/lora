@@ -1,0 +1,382 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LoRa &#8212; LoRa  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="lora">
+<h1>LoRa<a class="headerlink" href="#lora" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Source : <a class="reference external" href="https://youtu.be/cUhAyyzlv2o">https://youtu.be/cUhAyyzlv2o</a></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#range-vs-power" id="id1">Range vs Power</a></li>
+<li><a class="reference internal" href="#data-rates" id="id2">Data rates</a></li>
+<li><a class="reference internal" href="#lora-networks" id="id3">LoRa networks</a></li>
+<li><a class="reference internal" href="#lora-protocol-stack" id="id4">LoRa protocol stack</a></li>
+<li><a class="reference internal" href="#rules-and-regulations" id="id5">Rules and regulations</a><ul>
+<li><a class="reference internal" href="#general-considerations" id="id6">General considerations</a></li>
+<li><a class="reference internal" href="#in-europe" id="id7">In Europe</a></li>
+<li><a class="reference internal" href="#the-things-network-restrictions" id="id8">The Things Network restrictions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#duty-cycle-time-on-air-toa" id="id9">Duty cycle / time on air (ToA)</a></li>
+<li><a class="reference internal" href="#lorawan-device-classes" id="id10">LoRaWAN Device Classes</a><ul>
+<li><a class="reference internal" href="#class-a" id="id11">Class A</a></li>
+<li><a class="reference internal" href="#class-b" id="id12">Class B</a></li>
+<li><a class="reference internal" href="#class-c" id="id13">Class C</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dbm-dbi-dbd" id="id14">dBm, dBi, dBd</a></li>
+<li><a class="reference internal" href="#free-space-losses" id="id15">Free space losses</a></li>
+<li><a class="reference internal" href="#fresnel-zone" id="id16">Fresnel zone</a></li>
+<li><a class="reference internal" href="#link-budget" id="id17">Link Budget</a></li>
+<li><a class="reference internal" href="#eirp-and-erp" id="id18">EIRP and ERP</a></li>
+<li><a class="reference internal" href="#rssi" id="id19">RSSI</a></li>
+<li><a class="reference internal" href="#snr" id="id20">SNR</a></li>
+</ul>
+</div>
+<div class="section" id="range-vs-power">
+<h2><a class="toc-backref" href="#id1">Range vs Power</a><a class="headerlink" href="#range-vs-power" title="Permalink to this headline">¶</a></h2>
+<p>LPWAN stands for Low Power Wide Area Network and this type of wireless communication is designed for sending small data packages over long distances, operating on a battery</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="25%" />
+<col width="33%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Technology</th>
+<th class="head">Wireless Communication</th>
+<th class="head">Range</th>
+<th class="head">Tx Power</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Bluetooth</td>
+<td>Short range</td>
+<td>10 m</td>
+<td>2.5 mW</td>
+</tr>
+<tr class="row-odd"><td>Wifi</td>
+<td>Short range</td>
+<td>50 m</td>
+<td>80 mW</td>
+</tr>
+<tr class="row-even"><td>3G/4G</td>
+<td>Cellular</td>
+<td>5 km</td>
+<td>5000 mW</td>
+</tr>
+<tr class="row-odd"><td>LoRa</td>
+<td>LPWAN</td>
+<td><ul class="first last simple">
+<li>2-5 km (urban)</li>
+<li>5-15 km (rural)</li>
+<li>&gt; 15 km (LOS)</li>
+</ul>
+</td>
+<td>20 mW</td>
+</tr>
+</tbody>
+</table>
+<p>LoRa modulation / radio part -&gt; closed sources</p>
+</div>
+<div class="section" id="data-rates">
+<h2><a class="toc-backref" href="#id2">Data rates</a><a class="headerlink" href="#data-rates" title="Permalink to this headline">¶</a></h2>
+<p>Between 0.3 kbps to 5.5 kbps.</p>
+</div>
+<div class="section" id="lora-networks">
+<h2><a class="toc-backref" href="#id3">LoRa networks</a><a class="headerlink" href="#lora-networks" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Gateways can handle 100s of devices at the same time.</li>
+<li>The gateways can listen to multiple frequencies simultaneously, in every spreading factor at each frequency.</li>
+<li>Communications are bidirectional</li>
+</ul>
+<img alt="_images/lora_network_architecture.PNG" src="_images/lora_network_architecture.PNG" />
+<ul class="simple">
+<li>uplink : end node -&gt; gateways</li>
+<li>downlink : gateway -&gt; end node</li>
+<li>The LoRaWAN protocol does not support direct communication between end nodes. If you want direct communication between LoRa devices without the use of gateways, use the RadioHead Packet Radio library for embedded microprocessors. It provides a complete object-oriented library for sending and receiving packet sized messages via a variety of radios such as LoRa on a range of embedded microprocessors: <a class="reference external" href="https://www.airspayce.com/mikem/arduino/RadioHead">https://www.airspayce.com/mikem/arduino/RadioHead</a></li>
+</ul>
+</div>
+<div class="section" id="lora-protocol-stack">
+<h2><a class="toc-backref" href="#id4">LoRa protocol stack</a><a class="headerlink" href="#lora-protocol-stack" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/lora_protocol_stack.PNG" src="_images/lora_protocol_stack.PNG" />
+</div>
+<div class="section" id="rules-and-regulations">
+<h2><a class="toc-backref" href="#id5">Rules and regulations</a><a class="headerlink" href="#rules-and-regulations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="general-considerations">
+<h3><a class="toc-backref" href="#id6">General considerations</a><a class="headerlink" href="#general-considerations" title="Permalink to this headline">¶</a></h3>
+<p>LoRa operates in the unlicensed ISM (Industrial, Scientific and Medical) radio band that are available worldwide.</p>
+<img alt="_images/ism_bands.PNG" src="_images/ism_bands.PNG" />
+<p>A more detailed list of LoRa frequencies used per country can be found at:</p>
+<p><a class="reference external" href="https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html">https://www.thethingsnetwork.org/docs/lorawan/frequencies-by-country.html</a></p>
+<p><a class="reference external" href="https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html">https://www.thethingsnetwork.org/docs/lorawan/frequency-plans.html</a></p>
+<p><a class="reference external" href="https://www.ntia.doc.gov/files/ntia/publications/2003-allochrt.pdf">https://www.ntia.doc.gov/files/ntia/publications/2003-allochrt.pdf</a></p>
+<p>In Europe the European Telecommunications Standards Institute (ETSI) creates standards which are used by local (= country) regulatory authorities.</p>
+<p><a class="reference external" href="https://www.etsi.org/">https://www.etsi.org/</a></p>
+<p>In the US the Federal Communications Commission (FCC) creates these standards.</p>
+<p><a class="reference external" href="https://www.fcc.gov/">https://www.fcc.gov/</a></p>
+<p>ISM band advantages:</p>
+<ul class="simple">
+<li>Anyone is allowed to use these frequencies.</li>
+<li>No license fee is required.</li>
+</ul>
+<p>ISM band disadvantages:</p>
+<ul class="simple">
+<li>Low data rate.</li>
+<li>Lots of interference because anyone can use these frequencies.</li>
+</ul>
+</div>
+<div class="section" id="in-europe">
+<h3><a class="toc-backref" href="#id7">In Europe</a><a class="headerlink" href="#in-europe" title="Permalink to this headline">¶</a></h3>
+<p>For example in Europe when using the ISM band frequencies (863 MHz - 870 MHz) users must comply to the following rules:</p>
+<ul class="simple">
+<li>For uplink, the maximum transmission power is limited to 25mW (14 dBm).</li>
+<li>For downlink (for 869.525MHz), the maximum transmission power is limited to 0.5W (27 dBm)</li>
+<li>There is an 0.1% and 1.0% duty cycle per day depending on the channel.</li>
+<li>Maximum allowed antenna gain +2.15 dBi.</li>
+</ul>
+<p>Besides these ISM band rules, the network operator (for example The Things Network) can also add additional restrictions.</p>
+</div>
+<div class="section" id="the-things-network-restrictions">
+<h3><a class="toc-backref" href="#id8">The Things Network restrictions</a><a class="headerlink" href="#the-things-network-restrictions" title="Permalink to this headline">¶</a></h3>
+<p>If you use The Things Network (free public community LoRaWAN network), the following fair use policy applies:</p>
+<ul class="simple">
+<li>The uplink airtime is limited to 30 seconds per day (24 hours) per node.</li>
+<li>The downlink messages are limited to 10 messages per day (24 hours) per node.</li>
+</ul>
+<p>More information about the TTN fair use policy: <a class="reference external" href="https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html">https://www.thethingsnetwork.org/docs/lorawan/duty-cycle.html</a></p>
+</div>
+</div>
+<div class="section" id="duty-cycle-time-on-air-toa">
+<h2><a class="toc-backref" href="#id9">Duty cycle / time on air (ToA)</a><a class="headerlink" href="#duty-cycle-time-on-air-toa" title="Permalink to this headline">¶</a></h2>
+<p>When a signal is send from a sender it takes a certain amount of time before a receiver receives this signal. This time is called <strong>Time on Air (ToA)</strong>.</p>
+<p><strong>Duty cycle</strong> is the proportion of time during which a component, device, or system is operated. The duty cycle can be expressed as a ratio or as a percentage.  As mentioned previously in Europe there is a 0.1% and 1.0% duty cycle per day depending on the channel.</p>
+<p>To respect the 1% duty cycle :</p>
+<p><em>For example : ToA = 530ms =&gt; affer sending a message, we have to wait 99x530ms = 52.47s before sending a new message.</em></p>
+</div>
+<div class="section" id="lorawan-device-classes">
+<h2><a class="toc-backref" href="#id10">LoRaWAN Device Classes</a><a class="headerlink" href="#lorawan-device-classes" title="Permalink to this headline">¶</a></h2>
+<p>The LoRaWAN specification defines three device classes:</p>
+<ul class="simple">
+<li>A(ll) Battery powered devices. Each device uplink to the gateway and is followed by two short downlink receive windows.</li>
+<li>B(eacon) Same as class A but these devices also opens extra receive windows at scheduled times.</li>
+<li>C(ontinuous) Same as A but these devices are continuously listening. Hence these devices uses more power and are often mains powered.</li>
+</ul>
+<div class="section" id="class-a">
+<h3><a class="toc-backref" href="#id11">Class A</a><a class="headerlink" href="#class-a" title="Permalink to this headline">¶</a></h3>
+<p>At any time an end node can broadcast a signal. After this uplink transmission (tx) the end node will listen for a response from the gateway.</p>
+<p>The end node opens two receive slots at t1 and t2 seconds after an uplink transmission. The gateway can respond within the first receive slot or the second receive slot, but not both. Class B and C devices must also support class A functionality.</p>
+<img alt="_images/classA.PNG" src="_images/classA.PNG" />
+<p><em>Note : “All” means the class A mode is supported by all classes.</em></p>
+</div>
+<div class="section" id="class-b">
+<h3><a class="toc-backref" href="#id12">Class B</a><a class="headerlink" href="#class-b" title="Permalink to this headline">¶</a></h3>
+<p>In addition to Class A receive slots, class B devices opens extra receive slots at scheduled times.</p>
+<p>The end node receives a time synchronised beacon from the gateway, allowing the gateway to know when the node is listening. A class B device does not support device C functionality.</p>
+<img alt="_images/classB.PNG" src="_images/classB.PNG" />
+</div>
+<div class="section" id="class-c">
+<h3><a class="toc-backref" href="#id13">Class C</a><a class="headerlink" href="#class-c" title="Permalink to this headline">¶</a></h3>
+<p>In addition to Class A receive slots a class C device will listen continuously for responses from the gateway. A class C device does not support device B functionality.</p>
+<img alt="_images/classC.PNG" src="_images/classC.PNG" />
+</div>
+</div>
+<div class="section" id="dbm-dbi-dbd">
+<h2><a class="toc-backref" href="#id14">dBm, dBi, dBd</a><a class="headerlink" href="#dbm-dbi-dbd" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>dBm : reference is 1mW</li>
+<li>dBi : refers to the antenna gain with respect to an isotropic antenna</li>
+<li>dBd : dBd refers to the antenna gain with respect to a reference dipole antenna</li>
+</ul>
+<p>dBi = dBd + 2.15</p>
+</div>
+<div class="section" id="free-space-losses">
+<h2><a class="toc-backref" href="#id15">Free space losses</a><a class="headerlink" href="#free-space-losses" title="Permalink to this headline">¶</a></h2>
+<p>L(fs) = 32.45 + 20log(D) + 20log(f)</p>
+<ul class="simple">
+<li>Lfs = Free space loss in dB</li>
+<li>D = Distance between end node and gateway in km</li>
+<li>f = frequency in MHz</li>
+</ul>
+<p>For example: f=868MHz</p>
+<ul class="simple">
+<li>D=0.01 km, Lfs = 32.45 + 20log(0.01) + 20log(868) = 51 dB</li>
+<li>D=0.05 km, Lfs = 32.45 + 20log(0.05) + 20log(868) = 65 dB</li>
+<li>D=0.10 km, Lfs = 32.45 + 20log(0.10) + 20log(868) = 71 dB</li>
+<li>D=0.50 km, Lfs = 32.45 + 20log(0.50) + 20log(868) = 85 dB</li>
+<li>D=1.00 km, Lfs = 32.45 + 20log(1.00) + 20log(868) = 91 dB</li>
+</ul>
+</div>
+<div class="section" id="fresnel-zone">
+<h2><a class="toc-backref" href="#id16">Fresnel zone</a><a class="headerlink" href="#fresnel-zone" title="Permalink to this headline">¶</a></h2>
+<p>The Fresnel zone is an elliptical shaped body around the direct line of sight path between the end node and the gateway.</p>
+<p>Any obstacle within this volume, for example buildings, trees, hilltops or ground can weaken the transmitted signal even if there is a direct line of sight between the end node and the gateway.</p>
+<img alt="_images/fresnel.PNG" src="_images/fresnel.PNG" />
+<p>=&gt; avoid objects within the Fresnel zone</p>
+<p>Earth curvature influence :</p>
+<img alt="_images/fresnel2.PNG" src="_images/fresnel2.PNG" />
+<p>As a rule of thumb Fresnel zone should always be clear of obstruction but this can be impractical so it is said that beyond 40% blockage, signal loss will become significant.</p>
+<img alt="_images/fresnel3.PNG" src="_images/fresnel3.PNG" />
+<p>Example :</p>
+<ul class="simple">
+<li>f = 868 MHz</li>
+<li>H : earth curvature allowance</li>
+<li>r+H : minimum end node and gateway height above ground</li>
+</ul>
+<img alt="_images/fresnel4.PNG" src="_images/fresnel4.PNG" />
+<ul class="simple">
+<li>For the best radio signal performance: The gateway antenna must be placed outdoors at a high location (avoiding obstacles in the Fresnel zone).</li>
+<li>The antenna design for both gateway and end nodes must be optimised for its regional frequency.</li>
+<li>Keep the antenna polarisation vertical for both gateway and end nodes and use omnidirectional antenna to cover a large area.</li>
+</ul>
+<img alt="_images/fresnel5.PNG" src="_images/fresnel5.PNG" />
+</div>
+<div class="section" id="link-budget">
+<h2><a class="toc-backref" href="#id17">Link Budget</a><a class="headerlink" href="#link-budget" title="Permalink to this headline">¶</a></h2>
+<p>A link budget is the sum of all of the gains and losses from the transmitter, through the medium (aka free space), to the receiver in a telecommunication system. It is a way of quantifying the link performance.</p>
+<p>The receiver sensitivity is the lowest power level at which receiver can receive or demodulate the signal.</p>
+<img alt="_images/link_budget.PNG" src="_images/link_budget.PNG" />
+</div>
+<div class="section" id="eirp-and-erp">
+<h2><a class="toc-backref" href="#id18">EIRP and ERP</a><a class="headerlink" href="#eirp-and-erp" title="Permalink to this headline">¶</a></h2>
+<p>The Effective Isotropic Radiated Power (EIRP) is the total power radiated by a hypothetical isotropic antenna in a single direction.</p>
+<img alt="_images/eirp.PNG" src="_images/eirp.PNG" />
+<p>The Effective Radiated Power (ERP) is the total power radiated by an actual antenna relative to a half-wave dipole rather than a theoretical isotropic antenna.</p>
+<img alt="_images/erp.PNG" src="_images/erp.PNG" />
+<p>EIRP = Tx power (dBm) + antenna gain (dBi) - cable loss (dBm)</p>
+<p>For example: EIRP = 20 + 10 - 5 = 25 dBm</p>
+<p>ERP = Tx power (dBm) + antenna gain (dBd) - cable loss (dBm)</p>
+<p>For example: ERP = 20 + 7.85 - 5 = 22.85 dBm</p>
+<p>Relationship EIRP and ERP: EIRP (dBm) = ERP (dBm) + 2.15</p>
+<p>What is the purpose of ERP and EIRP?</p>
+<p>RF transmitting systems must adhere to certain rules set by the regulatory bodies such as FCC or ETSI.</p>
+<p>One of these rules: radio devices must not exceed certain ERP or EIRP values set by these regulatory bodies.</p>
+</div>
+<div class="section" id="rssi">
+<h2><a class="toc-backref" href="#id19">RSSI</a><a class="headerlink" href="#rssi" title="Permalink to this headline">¶</a></h2>
+<p>The Received Signal Strength Indication (RSSI) is the received signal power in milliwatts and is measured in dBm.</p>
+<p>This value can be used as a measurement of how well a receiver can “hear” a signal from a sender.</p>
+<img alt="_images/rssi.PNG" src="_images/rssi.PNG" />
+<p>The RSSI is measured in dBm and is a negative value.</p>
+<p>The closer to 0 the better the signal is.</p>
+<p>Typical LoRa RSSI values are:</p>
+<p>RSSI minimum = -120 dBm.</p>
+<ul class="simple">
+<li>If RSSI=-30dBm: signal is strong.</li>
+<li>If RSSI=-120dBm: signal is weak.</li>
+</ul>
+</div>
+<div class="section" id="snr">
+<h2><a class="toc-backref" href="#id20">SNR</a><a class="headerlink" href="#snr" title="Permalink to this headline">¶</a></h2>
+<p>Signal-to-Noise Ratio (SNR) is the ratio between the received power signal and the noise floor power level.</p>
+<p>The noise floor is an area of all unwanted interfering signal sources which can corrupt the transmitted signal and therefore re-transmissions will occur.</p>
+<ul class="simple">
+<li>If SNR is greater than 0, the received signal operates above the noise floor.</li>
+<li>If SNR is smaller than 0, the received signal operates below the noise floor.</li>
+</ul>
+<p>Normally the noise floor is the physical limit of sensitivity, however LoRa works below the noise level.</p>
+<p>Typical LoRa SNR values are between: -20dB and +10dB</p>
+<p>A value closer to +10dB means the received signal is less corrupted.</p>
+<p>LoRa can demodulate signals which are -7.5 dB to -20 dB below the noise floor.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">LoRa</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Eric B.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
