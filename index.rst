@@ -12,6 +12,8 @@ LoRa
    
 Source : https://youtu.be/cUhAyyzlv2o (whole playlist)
 
+Slides : https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html
+
 .. contents:: :local:
    
 Range vs Power
@@ -293,8 +295,88 @@ A value closer to +10dB means the received signal is less corrupted.
 
 LoRa can demodulate signals which are -7.5 dB to -20 dB below the noise floor.
 
+Frequencies
+-----------
 
+Regional LoRa Alliance parameters :
 
+https://lora-alliance.org/lorawan-for-developers
+
+.. image:: _static/BW-SF.PNG
+
+Downlink : same as uplink with an additional one :
+
+.. image:: _static/BW-SF-down.PNG
+
+.. image:: _static/BW-SF2.PNG
+
+If your country uses the EU863-870 ISM band, than according to the LoRaWAN Regional Parameters document every EU868MHz end device must implement the following default channels:
+
+- 868.10 MHz, bandwidth = 125 kHz
+- 868.30 MHz, bandwidth = 125 kHz
+- 868.50 MHz, bandwidth = 125 kHz
+
+and additional 5 frequencies.
+
+The other 5 frequencies can be freely attributed by the network operator. For example,  The Things Network implemented the following frequencies: 867.1, 867.3, 867.5, 867.7 and 867.9.
+
+LoRaWAN only uses the following bandwidth ranges: 125 kHz, 250 kHz and 500 kHz.
+
+Which of these 3 ranges are actual used depends on the region or frequency plan.
+
+For example in Europe only the bandwidths 125kHz and 250 kHz are used.
+
+ETSI Sub bands 863-870
+"""""""""""""""""""""""
+
+.. image:: _static/etsi-sub.PNG
+
+.. image:: _static/etsi-sub2.PNG
+
+Changing frequencies for every transmission
+""""""""""""""""""""""""""""""""""""""""""""""
+
+An end device changes channel in a pseudo-random fashion for every transmission. 
+
+Changing frequencies makes the system more robust to interferences.
+
+For example in Europe for uplink transmissions 8 different frequencies are used.
+
+.. image:: _static/changing-channels.PNG
+
+Dwell time & hop time
+""""""""""""""""""""""
+
+**Dwell time* (or transmit time) is the amount of time needed to transmit on a frequency.
+
+**Hop time** is the amount of time needed to change from one frequency to another in which the radio is not transmitting
+
+Modulation Types and Chirp Spread Spectrum
+------------------------------------------
+
+TO CHECK
+
+- LoRa is a proprietary spread spectrum modulation scheme that is based on Chirp Spread Spectrum modulation (CSS).  
+- **Chirp** Spread Spectrum is a spread spectrum technique that uses wideband linear frequency modulated chirp pulses to encode information. A chirp pulse is a sweep in frequency on the corresponding bandwidth (125kHz, 250kHz...) defined earlier. Here 
+
+.. image:: _static/chirp-sf.PNG
+
+- **Spread spectrum** techniques are methods by which a signal is deliberately spread in the frequency domain. For example a signal is transmitted in short bursts, "hopping" between frequencies in a pseudo random sequence.
+
+Symbol, Spreading Factor and Chip
+---------------------------------
+
+TO CHECK
+
+https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits
+
+To generate symbols/chirps, the modem modulates the phase of an oscillator. The number of times per second that the modem adjusts the phase is called the **chip rate** and defines the modulation bandwidth. Chip rate is a direct subdivision of the quartz frequency (32 MHz).
+
+Basic chirps are simply a ramp from fmin to fmax (up-chirp) or fmax to fmin (down-chirp). Data-carrying chirps are chirps that are cyclically-shifted, and this cyclical shift carries the information.
+
+.. image:: _static/lora-mod.PNG
+
+**Spreading Factor (SF)** : defines the number of bits that can be encoded by a symbol.
 
 
 
