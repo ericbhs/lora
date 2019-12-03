@@ -40,42 +40,44 @@
 <p>Slides : <a class="reference external" href="https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html">https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_tutorial.html</a></p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#range-vs-power" id="id3">Range vs Power</a></li>
-<li><a class="reference internal" href="#data-rates" id="id4">Data rates</a></li>
-<li><a class="reference internal" href="#lora-networks" id="id5">LoRa networks</a></li>
-<li><a class="reference internal" href="#lora-protocol-stack" id="id6">LoRa protocol stack</a></li>
-<li><a class="reference internal" href="#rules-and-regulations" id="id7">Rules and regulations</a><ul>
-<li><a class="reference internal" href="#general-considerations" id="id8">General considerations</a></li>
-<li><a class="reference internal" href="#in-europe" id="id9">In Europe</a></li>
-<li><a class="reference internal" href="#the-things-network-restrictions" id="id10">The Things Network restrictions</a></li>
+<li><a class="reference internal" href="#range-vs-power" id="id1">Range vs Power</a></li>
+<li><a class="reference internal" href="#data-rates" id="id2">Data rates</a></li>
+<li><a class="reference internal" href="#lora-networks" id="id3">LoRa networks</a></li>
+<li><a class="reference internal" href="#lora-protocol-stack" id="id4">LoRa protocol stack</a></li>
+<li><a class="reference internal" href="#rules-and-regulations" id="id5">Rules and regulations</a><ul>
+<li><a class="reference internal" href="#general-considerations" id="id6">General considerations</a></li>
+<li><a class="reference internal" href="#in-europe" id="id7">In Europe</a></li>
+<li><a class="reference internal" href="#the-things-network-restrictions" id="id8">The Things Network restrictions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#duty-cycle-time-on-air-toa" id="id11">Duty cycle / time on air (ToA)</a></li>
-<li><a class="reference internal" href="#lorawan-device-classes" id="id12">LoRaWAN Device Classes</a><ul>
-<li><a class="reference internal" href="#class-a" id="id13">Class A</a></li>
-<li><a class="reference internal" href="#class-b" id="id14">Class B</a></li>
-<li><a class="reference internal" href="#class-c" id="id15">Class C</a></li>
+<li><a class="reference internal" href="#duty-cycle-time-on-air-toa" id="id9">Duty cycle / time on air (ToA)</a></li>
+<li><a class="reference internal" href="#lorawan-device-classes" id="id10">LoRaWAN Device Classes</a><ul>
+<li><a class="reference internal" href="#class-a" id="id11">Class A</a></li>
+<li><a class="reference internal" href="#class-b" id="id12">Class B</a></li>
+<li><a class="reference internal" href="#class-c" id="id13">Class C</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#dbm-dbi-dbd" id="id16">dBm, dBi, dBd</a></li>
-<li><a class="reference internal" href="#free-space-losses" id="id17">Free space losses</a></li>
-<li><a class="reference internal" href="#fresnel-zone" id="id18">Fresnel zone</a></li>
-<li><a class="reference internal" href="#link-budget" id="id19">Link Budget</a></li>
-<li><a class="reference internal" href="#eirp-and-erp" id="id20">EIRP and ERP</a></li>
-<li><a class="reference internal" href="#rssi" id="id21">RSSI</a></li>
-<li><a class="reference internal" href="#snr" id="id22">SNR</a></li>
-<li><a class="reference internal" href="#frequencies" id="id23">Frequencies</a><ul>
-<li><a class="reference internal" href="#etsi-sub-bands-863-870" id="id24">ETSI Sub bands 863-870</a></li>
-<li><a class="reference internal" href="#changing-frequencies-for-every-transmission" id="id25">Changing frequencies for every transmission</a></li>
-<li><a class="reference internal" href="#dwell-time-hop-time" id="id26">Dwell time &amp; hop time</a></li>
+<li><a class="reference internal" href="#dbm-dbi-dbd" id="id14">dBm, dBi, dBd</a></li>
+<li><a class="reference internal" href="#free-space-losses" id="id15">Free space losses</a></li>
+<li><a class="reference internal" href="#fresnel-zone" id="id16">Fresnel zone</a></li>
+<li><a class="reference internal" href="#link-budget" id="id17">Link Budget</a></li>
+<li><a class="reference internal" href="#eirp-and-erp" id="id18">EIRP and ERP</a></li>
+<li><a class="reference internal" href="#rssi" id="id19">RSSI</a></li>
+<li><a class="reference internal" href="#snr" id="id20">SNR</a></li>
+<li><a class="reference internal" href="#frequencies" id="id21">Frequencies</a><ul>
+<li><a class="reference internal" href="#etsi-sub-bands-863-870" id="id22">ETSI Sub bands 863-870</a></li>
+<li><a class="reference internal" href="#changing-frequencies-for-every-transmission" id="id23">Changing frequencies for every transmission</a></li>
+<li><a class="reference internal" href="#dwell-time-hop-time" id="id24">Dwell time &amp; hop time</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#modulation-types-and-chirp-spread-spectrum" id="id27">Modulation Types and Chirp Spread Spectrum</a></li>
-<li><a class="reference internal" href="#symbol-spreading-factor-and-chip" id="id28">Symbol, Spreading Factor and Chip</a></li>
+<li><a class="reference internal" href="#modulation-types-and-chirp-spread-spectrum" id="id25">Modulation Types and Chirp Spread Spectrum</a></li>
+<li><a class="reference internal" href="#symbol-spreading-factor-and-chip" id="id26">Symbol, Spreading Factor and Chip</a></li>
+<li><a class="reference internal" href="#lorawan-packets-format" id="id27">LoRaWan packets format</a></li>
+<li><a class="reference internal" href="#decrypt-raw-lorawan-packets" id="id28">Decrypt raw LoRaWan packets</a></li>
 </ul>
 </div>
 <div class="section" id="range-vs-power">
-<h2><a class="toc-backref" href="#id3">Range vs Power</a><a class="headerlink" href="#range-vs-power" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id1">Range vs Power</a><a class="headerlink" href="#range-vs-power" title="Permalink to this headline">¶</a></h2>
 <p>LPWAN stands for Low Power Wide Area Network and this type of wireless communication is designed for sending small data packages over long distances, operating on a battery</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -122,11 +124,11 @@
 <p>LoRa modulation / radio part -&gt; closed sources</p>
 </div>
 <div class="section" id="data-rates">
-<h2><a class="toc-backref" href="#id4">Data rates</a><a class="headerlink" href="#data-rates" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Data rates</a><a class="headerlink" href="#data-rates" title="Permalink to this headline">¶</a></h2>
 <p>Between 0.3 kbps to 5.5 kbps.</p>
 </div>
 <div class="section" id="lora-networks">
-<h2><a class="toc-backref" href="#id5">LoRa networks</a><a class="headerlink" href="#lora-networks" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">LoRa networks</a><a class="headerlink" href="#lora-networks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Gateways can handle 100s of devices at the same time.</li>
 <li>The gateways can listen to multiple frequencies simultaneously, in every spreading factor at each frequency.</li>
@@ -140,13 +142,13 @@
 </ul>
 </div>
 <div class="section" id="lora-protocol-stack">
-<h2><a class="toc-backref" href="#id6">LoRa protocol stack</a><a class="headerlink" href="#lora-protocol-stack" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">LoRa protocol stack</a><a class="headerlink" href="#lora-protocol-stack" title="Permalink to this headline">¶</a></h2>
 <img alt="_images/lora_protocol_stack.PNG" src="_images/lora_protocol_stack.PNG" />
 </div>
 <div class="section" id="rules-and-regulations">
-<h2><a class="toc-backref" href="#id7">Rules and regulations</a><a class="headerlink" href="#rules-and-regulations" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Rules and regulations</a><a class="headerlink" href="#rules-and-regulations" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="general-considerations">
-<h3><a class="toc-backref" href="#id8">General considerations</a><a class="headerlink" href="#general-considerations" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">General considerations</a><a class="headerlink" href="#general-considerations" title="Permalink to this headline">¶</a></h3>
 <p>LoRa operates in the unlicensed ISM (Industrial, Scientific and Medical) radio band that are available worldwide.</p>
 <img alt="_images/ism_bands.PNG" src="_images/ism_bands.PNG" />
 <p>A more detailed list of LoRa frequencies used per country can be found at:</p>
@@ -169,7 +171,7 @@
 </ul>
 </div>
 <div class="section" id="in-europe">
-<h3><a class="toc-backref" href="#id9">In Europe</a><a class="headerlink" href="#in-europe" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">In Europe</a><a class="headerlink" href="#in-europe" title="Permalink to this headline">¶</a></h3>
 <p>For example in Europe when using the ISM band frequencies (863 MHz - 870 MHz) users must comply to the following rules:</p>
 <ul class="simple">
 <li>For uplink, the maximum transmission power is limited to 25mW (14 dBm).</li>
@@ -180,7 +182,7 @@
 <p>Besides these ISM band rules, the network operator (for example The Things Network) can also add additional restrictions.</p>
 </div>
 <div class="section" id="the-things-network-restrictions">
-<h3><a class="toc-backref" href="#id10">The Things Network restrictions</a><a class="headerlink" href="#the-things-network-restrictions" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">The Things Network restrictions</a><a class="headerlink" href="#the-things-network-restrictions" title="Permalink to this headline">¶</a></h3>
 <p>If you use The Things Network (free public community LoRaWAN network), the following fair use policy applies:</p>
 <ul class="simple">
 <li>The uplink airtime is limited to 30 seconds per day (24 hours) per node.</li>
@@ -190,14 +192,14 @@
 </div>
 </div>
 <div class="section" id="duty-cycle-time-on-air-toa">
-<h2><a class="toc-backref" href="#id11">Duty cycle / time on air (ToA)</a><a class="headerlink" href="#duty-cycle-time-on-air-toa" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Duty cycle / time on air (ToA)</a><a class="headerlink" href="#duty-cycle-time-on-air-toa" title="Permalink to this headline">¶</a></h2>
 <p>When a signal is send from a sender it takes a certain amount of time before a receiver receives this signal. This time is called <strong>Time on Air (ToA)</strong>.</p>
 <p><strong>Duty cycle</strong> is the proportion of time during which a component, device, or system is operated. The duty cycle can be expressed as a ratio or as a percentage.  As mentioned previously in Europe there is a 0.1% and 1.0% duty cycle per day depending on the channel.</p>
 <p>To respect the 1% duty cycle :</p>
 <p><em>For example : ToA = 530ms =&gt; affer sending a message, we have to wait 99x530ms = 52.47s before sending a new message.</em></p>
 </div>
 <div class="section" id="lorawan-device-classes">
-<h2><a class="toc-backref" href="#id12">LoRaWAN Device Classes</a><a class="headerlink" href="#lorawan-device-classes" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">LoRaWAN Device Classes</a><a class="headerlink" href="#lorawan-device-classes" title="Permalink to this headline">¶</a></h2>
 <p>The LoRaWAN specification defines three device classes:</p>
 <ul class="simple">
 <li>A(ll) Battery powered devices. Each device uplink to the gateway and is followed by two short downlink receive windows.</li>
@@ -205,26 +207,26 @@
 <li>C(ontinuous) Same as A but these devices are continuously listening. Hence these devices uses more power and are often mains powered.</li>
 </ul>
 <div class="section" id="class-a">
-<h3><a class="toc-backref" href="#id13">Class A</a><a class="headerlink" href="#class-a" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Class A</a><a class="headerlink" href="#class-a" title="Permalink to this headline">¶</a></h3>
 <p>At any time an end node can broadcast a signal. After this uplink transmission (tx) the end node will listen for a response from the gateway.</p>
 <p>The end node opens two receive slots at t1 and t2 seconds after an uplink transmission. The gateway can respond within the first receive slot or the second receive slot, but not both. Class B and C devices must also support class A functionality.</p>
 <img alt="_images/classA.PNG" src="_images/classA.PNG" />
 <p><em>Note : “All” means the class A mode is supported by all classes.</em></p>
 </div>
 <div class="section" id="class-b">
-<h3><a class="toc-backref" href="#id14">Class B</a><a class="headerlink" href="#class-b" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Class B</a><a class="headerlink" href="#class-b" title="Permalink to this headline">¶</a></h3>
 <p>In addition to Class A receive slots, class B devices opens extra receive slots at scheduled times.</p>
 <p>The end node receives a time synchronised beacon from the gateway, allowing the gateway to know when the node is listening. A class B device does not support device C functionality.</p>
 <img alt="_images/classB.PNG" src="_images/classB.PNG" />
 </div>
 <div class="section" id="class-c">
-<h3><a class="toc-backref" href="#id15">Class C</a><a class="headerlink" href="#class-c" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Class C</a><a class="headerlink" href="#class-c" title="Permalink to this headline">¶</a></h3>
 <p>In addition to Class A receive slots a class C device will listen continuously for responses from the gateway. A class C device does not support device B functionality.</p>
 <img alt="_images/classC.PNG" src="_images/classC.PNG" />
 </div>
 </div>
 <div class="section" id="dbm-dbi-dbd">
-<h2><a class="toc-backref" href="#id16">dBm, dBi, dBd</a><a class="headerlink" href="#dbm-dbi-dbd" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">dBm, dBi, dBd</a><a class="headerlink" href="#dbm-dbi-dbd" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>dBm : reference is 1mW</li>
 <li>dBi : refers to the antenna gain with respect to an isotropic antenna</li>
@@ -233,7 +235,7 @@
 <p>dBi = dBd + 2.15</p>
 </div>
 <div class="section" id="free-space-losses">
-<h2><a class="toc-backref" href="#id17">Free space losses</a><a class="headerlink" href="#free-space-losses" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id15">Free space losses</a><a class="headerlink" href="#free-space-losses" title="Permalink to this headline">¶</a></h2>
 <p>L(fs) = 32.45 + 20log(D) + 20log(f)</p>
 <ul class="simple">
 <li>Lfs = Free space loss in dB</li>
@@ -250,7 +252,7 @@
 </ul>
 </div>
 <div class="section" id="fresnel-zone">
-<h2><a class="toc-backref" href="#id18">Fresnel zone</a><a class="headerlink" href="#fresnel-zone" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id16">Fresnel zone</a><a class="headerlink" href="#fresnel-zone" title="Permalink to this headline">¶</a></h2>
 <p>The Fresnel zone is an elliptical shaped body around the direct line of sight path between the end node and the gateway.</p>
 <p>Any obstacle within this volume, for example buildings, trees, hilltops or ground can weaken the transmitted signal even if there is a direct line of sight between the end node and the gateway.</p>
 <img alt="_images/fresnel.PNG" src="_images/fresnel.PNG" />
@@ -274,13 +276,13 @@
 <img alt="_images/fresnel5.PNG" src="_images/fresnel5.PNG" />
 </div>
 <div class="section" id="link-budget">
-<h2><a class="toc-backref" href="#id19">Link Budget</a><a class="headerlink" href="#link-budget" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Link Budget</a><a class="headerlink" href="#link-budget" title="Permalink to this headline">¶</a></h2>
 <p>A link budget is the sum of all of the gains and losses from the transmitter, through the medium (aka free space), to the receiver in a telecommunication system. It is a way of quantifying the link performance.</p>
 <p>The receiver sensitivity is the lowest power level at which receiver can receive or demodulate the signal.</p>
 <img alt="_images/link_budget.PNG" src="_images/link_budget.PNG" />
 </div>
 <div class="section" id="eirp-and-erp">
-<h2><a class="toc-backref" href="#id20">EIRP and ERP</a><a class="headerlink" href="#eirp-and-erp" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id18">EIRP and ERP</a><a class="headerlink" href="#eirp-and-erp" title="Permalink to this headline">¶</a></h2>
 <p>The Effective Isotropic Radiated Power (EIRP) is the total power radiated by a hypothetical isotropic antenna in a single direction.</p>
 <img alt="_images/eirp.PNG" src="_images/eirp.PNG" />
 <p>The Effective Radiated Power (ERP) is the total power radiated by an actual antenna relative to a half-wave dipole rather than a theoretical isotropic antenna.</p>
@@ -295,7 +297,7 @@
 <p>One of these rules: radio devices must not exceed certain ERP or EIRP values set by these regulatory bodies.</p>
 </div>
 <div class="section" id="rssi">
-<h2><a class="toc-backref" href="#id21">RSSI</a><a class="headerlink" href="#rssi" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">RSSI</a><a class="headerlink" href="#rssi" title="Permalink to this headline">¶</a></h2>
 <p>The Received Signal Strength Indication (RSSI) is the received signal power in milliwatts and is measured in dBm.</p>
 <p>This value can be used as a measurement of how well a receiver can “hear” a signal from a sender.</p>
 <img alt="_images/rssi.PNG" src="_images/rssi.PNG" />
@@ -309,7 +311,7 @@
 </ul>
 </div>
 <div class="section" id="snr">
-<h2><a class="toc-backref" href="#id22">SNR</a><a class="headerlink" href="#snr" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id20">SNR</a><a class="headerlink" href="#snr" title="Permalink to this headline">¶</a></h2>
 <p>Signal-to-Noise Ratio (SNR) is the ratio between the received power signal and the noise floor power level.</p>
 <p>The noise floor is an area of all unwanted interfering signal sources which can corrupt the transmitted signal and therefore re-transmissions will occur.</p>
 <ul class="simple">
@@ -322,7 +324,7 @@
 <p>LoRa can demodulate signals which are -7.5 dB to -20 dB below the noise floor.</p>
 </div>
 <div class="section" id="frequencies">
-<h2><a class="toc-backref" href="#id23">Frequencies</a><a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id21">Frequencies</a><a class="headerlink" href="#frequencies" title="Permalink to this headline">¶</a></h2>
 <p>Regional LoRa Alliance parameters :</p>
 <p><a class="reference external" href="https://lora-alliance.org/lorawan-for-developers">https://lora-alliance.org/lorawan-for-developers</a></p>
 <img alt="_images/BW-SF.PNG" src="_images/BW-SF.PNG" />
@@ -341,25 +343,25 @@
 <p>Which of these 3 ranges are actual used depends on the region or frequency plan.</p>
 <p>For example in Europe only the bandwidths 125kHz and 250 kHz are used.</p>
 <div class="section" id="etsi-sub-bands-863-870">
-<h3><a class="toc-backref" href="#id24">ETSI Sub bands 863-870</a><a class="headerlink" href="#etsi-sub-bands-863-870" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id22">ETSI Sub bands 863-870</a><a class="headerlink" href="#etsi-sub-bands-863-870" title="Permalink to this headline">¶</a></h3>
 <img alt="_images/etsi-sub.PNG" src="_images/etsi-sub.PNG" />
 <img alt="_images/etsi-sub2.PNG" src="_images/etsi-sub2.PNG" />
 </div>
 <div class="section" id="changing-frequencies-for-every-transmission">
-<h3><a class="toc-backref" href="#id25">Changing frequencies for every transmission</a><a class="headerlink" href="#changing-frequencies-for-every-transmission" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">Changing frequencies for every transmission</a><a class="headerlink" href="#changing-frequencies-for-every-transmission" title="Permalink to this headline">¶</a></h3>
 <p>An end device changes channel in a pseudo-random fashion for every transmission.</p>
 <p>Changing frequencies makes the system more robust to interferences.</p>
 <p>For example in Europe for uplink transmissions 8 different frequencies are used.</p>
 <img alt="_images/changing-channels.PNG" src="_images/changing-channels.PNG" />
 </div>
 <div class="section" id="dwell-time-hop-time">
-<h3><a class="toc-backref" href="#id26">Dwell time &amp; hop time</a><a class="headerlink" href="#dwell-time-hop-time" title="Permalink to this headline">¶</a></h3>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Dwell time* (or transmit time) is the amount of time needed to transmit on a frequency.</p>
+<h3><a class="toc-backref" href="#id24">Dwell time &amp; hop time</a><a class="headerlink" href="#dwell-time-hop-time" title="Permalink to this headline">¶</a></h3>
+<p><strong>Dwell time</strong> (or transmit time) is the amount of time needed to transmit on a frequency.</p>
 <p><strong>Hop time</strong> is the amount of time needed to change from one frequency to another in which the radio is not transmitting</p>
 </div>
 </div>
 <div class="section" id="modulation-types-and-chirp-spread-spectrum">
-<h2><a class="toc-backref" href="#id27">Modulation Types and Chirp Spread Spectrum</a><a class="headerlink" href="#modulation-types-and-chirp-spread-spectrum" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id25">Modulation Types and Chirp Spread Spectrum</a><a class="headerlink" href="#modulation-types-and-chirp-spread-spectrum" title="Permalink to this headline">¶</a></h2>
 <p>TO CHECK</p>
 <ul class="simple">
 <li>LoRa is a proprietary spread spectrum modulation scheme that is based on Chirp Spread Spectrum modulation (CSS).</li>
@@ -371,12 +373,38 @@
 </ul>
 </div>
 <div class="section" id="symbol-spreading-factor-and-chip">
-<h2><a class="toc-backref" href="#id28">Symbol, Spreading Factor and Chip</a><a class="headerlink" href="#symbol-spreading-factor-and-chip" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id26">Symbol, Spreading Factor and Chip</a><a class="headerlink" href="#symbol-spreading-factor-and-chip" title="Permalink to this headline">¶</a></h2>
 <p>TO CHECK</p>
+<p><a class="reference external" href="https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits">https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits</a></p>
 <p>To generate symbols/chirps, the modem modulates the phase of an oscillator. The number of times per second that the modem adjusts the phase is called the <strong>chip rate</strong> and defines the modulation bandwidth. Chip rate is a direct subdivision of the quartz frequency (32 MHz).</p>
 <p>Basic chirps are simply a ramp from fmin to fmax (up-chirp) or fmax to fmin (down-chirp). Data-carrying chirps are chirps that are cyclically-shifted, and this cyclical shift carries the information.</p>
 <img alt="_images/lora-mod.PNG" src="_images/lora-mod.PNG" />
 <p><strong>Spreading Factor (SF)</strong> : defines the number of bits that can be encoded by a symbol.</p>
+</div>
+<div class="section" id="lorawan-packets-format">
+<h2><a class="toc-backref" href="#id27">LoRaWan packets format</a><a class="headerlink" href="#lorawan-packets-format" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>example : 80C02301260021000266EEA76CCE0C1BBC7A36F69F
+80      C0230126   00      2100   02      66EEA76CCE0C1BBC   7A36F69F
+MTYPE   devaddr    FCtrl   FCnt   FPort   DATA               MIC
+</pre></div>
+</div>
+</div>
+<div class="section" id="decrypt-raw-lorawan-packets">
+<h2><a class="toc-backref" href="#id28">Decrypt raw LoRaWan packets</a><a class="headerlink" href="#decrypt-raw-lorawan-packets" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">lora.crypto</span> <span class="kn">import</span> <span class="n">loramac_decrypt</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="s1">&#39;80C02301260021000266EEA76CCE0C1BBC7A36F69F&#39;</span>
+<span class="n">sequence_counter</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="mi">14</span><span class="p">:</span><span class="mi">16</span><span class="p">]</span> <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">14</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">app_session_key</span> <span class="o">=</span> <span class="s1">&#39;91299DA630B26526967B442361820CAD&#39;</span>
+<span class="n">dev_addr</span> <span class="o">=</span> <span class="n">payload</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="n">payload</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">decrypted_payload</span> <span class="o">=</span> <span class="n">loramac_decrypt</span><span class="p">(</span>
+                                <span class="n">payload</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">34</span><span class="p">],</span>
+                                <span class="n">sequence_counter</span><span class="p">,</span>
+                                <span class="n">app_session_key</span><span class="p">,</span>
+                                <span class="n">dev_addr</span><span class="p">)</span>
+<span class="c1"># Result : 0xbe 0xef 0xde 0xad 0xbe 0xef 0xde 0xad</span>
+</pre></div>
+</div>
 </div>
 </div>
 

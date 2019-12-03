@@ -347,7 +347,7 @@ For example in Europe for uplink transmissions 8 different frequencies are used.
 Dwell time & hop time
 """"""""""""""""""""""
 
-**Dwell time* (or transmit time) is the amount of time needed to transmit on a frequency.
+**Dwell time** (or transmit time) is the amount of time needed to transmit on a frequency.
 
 **Hop time** is the amount of time needed to change from one frequency to another in which the radio is not transmitting
 
@@ -368,6 +368,8 @@ Symbol, Spreading Factor and Chip
 
 TO CHECK
 
+https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits
+
 To generate symbols/chirps, the modem modulates the phase of an oscillator. The number of times per second that the modem adjusts the phase is called the **chip rate** and defines the modulation bandwidth. Chip rate is a direct subdivision of the quartz frequency (32 MHz).
 
 Basic chirps are simply a ramp from fmin to fmax (up-chirp) or fmax to fmin (down-chirp). Data-carrying chirps are chirps that are cyclically-shifted, and this cyclical shift carries the information.
@@ -376,8 +378,32 @@ Basic chirps are simply a ramp from fmin to fmax (up-chirp) or fmax to fmin (dow
 
 **Spreading Factor (SF)** : defines the number of bits that can be encoded by a symbol.
 
+LoRaWan packets format
+----------------------
 
+.. code-block:: none
 
+	example : 80C02301260021000266EEA76CCE0C1BBC7A36F69F
+	80      C0230126   00      2100   02      66EEA76CCE0C1BBC   7A36F69F         
+	MTYPE   devaddr    FCtrl   FCnt   FPort   DATA               MIC
+	
+Decrypt raw LoRaWan packets
+---------------------------
+
+.. code-block:: python
+
+	from lora.crypto import loramac_decrypt
+
+	payload = '80C02301260021000266EEA76CCE0C1BBC7A36F69F'
+	sequence_counter = int(payload[14:16] + payload[12:14], 16)
+	app_session_key = '91299DA630B26526967B442361820CAD'
+	dev_addr = payload[8:10] + payload[6:8] + payload[4:6] + payload[2:4]
+	decrypted_payload = loramac_decrypt(
+                                        payload[18:34],
+                                        sequence_counter,
+                                        app_session_key,
+                                        dev_addr)
+	# Result : 0xbe 0xef 0xde 0xad 0xbe 0xef 0xde 0xad
 
 
 
